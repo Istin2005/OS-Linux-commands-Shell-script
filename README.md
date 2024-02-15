@@ -43,22 +43,63 @@ s.n. dasgupta
 cat < file1
 ## OUTPUT
 
+localhost:~# cat file1
+chanchal singhvi
+c.k. shukla
+s.n. dasgupta
+sumit chakrobarty
+
+
+
 
 
 cat < file2
 ## OUTPUT
 
+localhost:~# cat file2
+anil aggarwal
+barun sengupta
+c.k. shukla
+lalit chowdury
+s.n. dasgupta
+
+
 
 # Comparing Files
 cmp file1 file2
 ## OUTPUT
+localhost:~# cmp file1 file2
+file1 file2 differ: char 1, line 1
+
  
 comm file1 file2
  ## OUTPUT
+ localhost:~# comm file1 file2
+        anil aggarwal
+        barun sengupta
+        c.k. shukla
+chanchal singhvi
+c.k. shukla
+        lalit chowdury
+                s.n. dasgupta
+sumit chakrobarty
+ 
 
  
 diff file1 file2
 ## OUTPUT
+localhost:~# diff file1 file2
+--- file1
++++ file2
+@@ -1,4 +1,5 @@
+-chanchal singhvi
++anil aggarwal
++barun sengupta
+ c.k. shukla
++lalit chowdury
+ s.n. dasgupta
+-sumit chakrobart
+
 
 
 #Filters
@@ -82,18 +123,26 @@ cat > file22
 
 cut -c1-3 file11
 ## OUTPUT
+localhost:~# cut -c1-3 file11
+Hel
+Thi
 
 
 
 
 cut -d "|" -f 1 file22
 ## OUTPUT
-
-
+localhost:~# cut -d "|" -f 1 file22
+1001
+1002
+1003
 
 cut -d "|" -f 2 file22
 ## OUTPUT
-
+localhost:~# cut -d "|" -f 2 file22
+ Ram
+ tom
+ Joe
 
 cat < newfile 
 ```
